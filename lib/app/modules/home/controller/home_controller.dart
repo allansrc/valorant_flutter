@@ -12,8 +12,8 @@ class HomeController extends ChangeNotifier {
   // da tela. Dica: esperimente remover o setState, e tentar usar o botão +
   // depois faça hot restart.
 
-  void incrementCounter(int newValue) {
-    counter.value = newValue;
+  void incrementCounter() {
+    counter.value++;
     // linha acima atribui novo valor á variável counter
     counter.notifyListeners();
     // método acima atualiza o widget que usar o valor counter
