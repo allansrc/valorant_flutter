@@ -95,7 +95,7 @@ class Agent {
         isPlayableCharacter: json["isPlayableCharacter"],
         isAvailableForTest: json["isAvailableForTest"],
         isBaseContent: json["isBaseContent"],
-        // role: json["role"],
+        role: json["role"] == null ? null : Role.fromJson(json["role"]),
         abilities: json["abilities"] == null
             ? []
             : List<Ability?>.from(
