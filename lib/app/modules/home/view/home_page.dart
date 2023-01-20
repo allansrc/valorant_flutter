@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:valorant_flutter/app/modules/home/controller/home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,6 +40,12 @@ class _HomePageState extends State<HomePage> {
                   '$value',
                   style: Theme.of(context).textTheme.headline4,
                 ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/maps');
+                  },
+                  child: const Text('Ir para Maps'),
+                )
               ],
             ),
           );
