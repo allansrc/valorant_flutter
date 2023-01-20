@@ -1,34 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:valorant_flutter/app/modules/home/controller/home_controller.dart';
+import 'package:valorant_flutter/app/modules/maps/controller/maps_controller.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class MapsPage extends StatefulWidget {
+  const MapsPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<MapsPage> createState() => MapsPageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  final controller = HomeController();
+class MapsPageState extends State<MapsPage> {
+  final controller = MapsController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: ValueListenableBuilder(
         valueListenable: controller.counter,
-        // linha acima será o a variável que será ouvida
         builder: (context, value, Widget? child) {
-          /// acima temos os parametros: context, value e child.
-          ///
-          /// context serve para passar o contexto atual da arvore de widgets
-          /// que o flutter montou.
-          ///
-          /// value corresponde ao valor da variável que está sendo ouvida,
-          /// nesse caso, o valor de counter declarado no controller.
-          ///
-          /// child, geralmente não usamos, á nao ser que queira fazer o build
-          /// de um widget durante alteracao do valor da variável.
-          /// ... Não recomendo.
           return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -40,12 +30,6 @@ class _HomePageState extends State<HomePage> {
                   '$value',
                   style: Theme.of(context).textTheme.headline4,
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/maps');
-                  },
-                  child: const Text('Ir para Maps'),
-                )
               ],
             ),
           );
