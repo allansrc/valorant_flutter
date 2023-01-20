@@ -17,32 +17,44 @@ class MapsPageState extends State<MapsPage> {
     return Scaffold(
       appBar: AppBar(),
       body: ValueListenableBuilder(
-        valueListenable: controller.counter,
-        builder: (context, value, Widget? child) {
+        valueListenable: controller.mapList,
+        builder: (context, mapList, Widget? child) {
           return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                const Text(
-                  'You have pushed the button this many times:',
+                Expanded(
+                  child: ListView.builder(
+                      itemCount: mapList.length,
+                      itemBuilder: (context, index) {
+                        return Text(
+                          '${mapList.elementAt(index).displayName}',
+                          // a linha acima é o mesmo que fazer > '${mapList[inde].displayName}'
+                          style: Theme.of(context).textTheme.headline4,
+                        );
+                      }),
                 ),
-                Text(
-                  '$value',
-                  style: Theme.of(context).textTheme.headline4,
-                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      controller.getMapList();
+                    },
+                    child: const Text('Buscar lista da Mapas'),
+                  ),
+                )
               ],
             ),
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: controller.incrementCounter,
-        // chamada de funções podem ser como na linha acima, ou como abaixo
-        // onPressed: () {
-        //   controller.incrementCounter();
-        // },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        onPressed: () {
+          controller.mapList.value.clear();
+          setState(() {});
+        },
+        tooltip: 'Limpar lista de Maps',
+        child: const Icon(Icons.cleaning_services_sharp),
       ),
     );
   }

@@ -1,25 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:valorant_flutter/app/modules/home/feature/data/models/map_model.dart';
+import 'package:valorant_flutter/app/modules/maps/feature/domain/usecases/get_map_list_usecase.dart';
 
 class MapsController extends ChangeNotifier {
-  final mapList = ValueListenable<>();
-  final counter = ValueNotifier<int>(0);
-  // linha acima transforma a variável counter do tipo inteiro
-  // em um listenable: ou seja, ela poderá ser "ouvida" por widgets
-  // dessa forma não será necessário usar o método setState(() {}) para
-  // a tela ser atualizada.
+  // variáveis de serviços que vamos usar, por exemplo, fazer chamada na API
+  final getMapListUsecase = GetMapListUsecase();
 
-  // Para ver exemplo de uma função de incremento/soma de inteiros
-  // abrir o arquivo main, o qual usa setState(() {}) para atualizar o estado
-  // da tela. Dica: esperimente remover o setState, e tentar usar o botão +
-  // depois faça hot restart.
+  // Variáveis locais, usadas para armazenar dados que vamos usar na view/page
+  final mapList = ValueNotifier<List<MapModel>>([]);
 
-  void incrementCounter() {
-    counter.value++;
-    // linha acima atribui novo valor á variável counter
-    counter.notifyListeners();
-    // método acima atualiza o widget que usar o valor counter
+  Future<void> getMapList() async {
+    final result = await getMapListUsecase.call();
+    mapList.value = result;
+    notifyListeners();
+    // a linha 32, faz a chamada no usecase, que irá chamar o serviço da API
+    // a linha 33 atribui o valor retornado á variável mapList, que vamos usar
+    // na view/page.
+    // a linha 34 faz com que todo widget que esteja "ouvindo" essa variável
+    // seja notificado que ela foi alterada, e se for preciso ele (o widget)
+    //  atualize os valores que estao sendo mostrado na tela.
   }
-
-  void getMapList() {}
 }
