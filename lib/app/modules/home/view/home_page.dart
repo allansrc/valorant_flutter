@@ -40,6 +40,12 @@ class _HomePageState extends State<HomePage> {
                   '$value',
                   style: Theme.of(context).textTheme.headline4,
                 ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/maps');
+                  },
+                  child: const Text('Ir para Maps'),
+                )
               ],
             ),
           );
