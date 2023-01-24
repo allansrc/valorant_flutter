@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:valorant_flutter/app/modules/agents/controller/dio_agents_controller.dart';
-
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import '../feature/data/models/agents_response_model.dart';
 
 class AgentsPage extends StatelessWidget {
@@ -63,10 +62,11 @@ class AgentsPage extends StatelessWidget {
                           ),
                           onPressed: () {
                             showBarModalBottomSheet(
+                                backgroundColor: Colors.black,
                                 context: context,
                                 builder: (context) {
                                   return GridView.count(
-                                    padding: const EdgeInsets.all(20),
+                                    padding: const EdgeInsets.all(10),
                                     crossAxisSpacing: 10,
                                     mainAxisSpacing: 10,
                                     crossAxisCount: 2,
@@ -75,7 +75,10 @@ class AgentsPage extends StatelessWidget {
                                         abilities!.length,
                                         (abilityindex) => Container(
                                           child: Text(
-                                              '${abilities[abilityindex]?.description}'),
+                                            '${abilities[abilityindex]?.description}',
+                                            style: const TextStyle(
+                                                color: Colors.white),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -91,18 +94,6 @@ class AgentsPage extends StatelessWidget {
               },
             );
           }),
-    );
-  }
-}
-
-class AgentInfo extends StatelessWidget {
-  const AgentInfo({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Container(),
     );
   }
 }
