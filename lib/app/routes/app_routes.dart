@@ -5,6 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:valorant_flutter/app/modules/home/view/home_page.dart';
 import 'package:valorant_flutter/app/modules/maps/view/maps_page.dart';
 
+import '../modules/agents/view/agents_page.dart';
+
 class AppRoutes {
   /// classe AppRoutes armazena dados de rotas. incluindo:
   /// rotas nomeadas :: exemplo > '/agents'
@@ -33,6 +35,8 @@ class AppRoutes {
     '/home': (BuildContext context) => const HomePage(),
 
     /// demais rotas
-    '/maps': (BuildContext context) => const MapsPage()
+    '/maps': (BuildContext context) => const MapsPage(),
+
+    '/agents': (BuildContext context) => AgentsPage(),
   };
 }

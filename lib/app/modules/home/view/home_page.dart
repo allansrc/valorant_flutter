@@ -16,50 +16,39 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: ValueListenableBuilder(
         valueListenable: controller.counter,
-        // linha acima será o a variável que será ouvida
         builder: (context, value, Widget? child) {
-          /// acima temos os parametros: context, value e child.
-          ///
-          /// context serve para passar o contexto atual da arvore de widgets
-          /// que o flutter montou.
-          ///
-          /// value corresponde ao valor da variável que está sendo ouvida,
-          /// nesse caso, o valor de counter declarado no controller.
-          ///
-          /// child, geralmente não usamos, á nao ser que queira fazer o build
-          /// de um widget durante alteracao do valor da variável.
-          /// ... Não recomendo.
-          return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Text(
-                  'You have pushed the button this many times:',
+          return GridView.count(
+              padding: const EdgeInsets.all(8),
+              crossAxisCount: 2,
+              children: [
+                Card(
+                  color: Colors.blue,
+                  child: FloatingActionButton(
+                    elevation: 0,
+                    child: const Text('Maps'),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/maps');
+                    },
+                  ),
                 ),
-                Text(
-                  '$value',
-                  style: Theme.of(context).textTheme.headline4,
+                Card(
+                  color: Colors.blue,
+                  child: FloatingActionButton(
+                    elevation: 0,
+                    child: const Text('Agents'),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/agents');
+                    },
+                  ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/maps');
-                  },
-                  child: const Text('Ir para Maps'),
-                )
-              ],
-            ),
-          );
+              ]);
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: controller.incrementCounter,
-        // chamada de funções podem ser como na linha acima, ou como abaixo
-        // onPressed: () {
-        //   controller.incrementCounter();
-        // },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: controller.incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ),
     );
   }
 }
