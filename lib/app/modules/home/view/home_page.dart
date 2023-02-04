@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.blue,
                   child: FloatingActionButton(
                     elevation: 0,
+                    heroTag: 'maps',
                     child: const Text('Maps'),
                     onPressed: () {
                       Navigator.pushNamed(context, '/maps');
@@ -35,6 +36,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.blue,
                   child: FloatingActionButton(
                     elevation: 0,
+                    heroTag: 'agents',
                     child: const Text('Agents'),
                     onPressed: () {
                       Navigator.pushNamed(context, '/agents');
