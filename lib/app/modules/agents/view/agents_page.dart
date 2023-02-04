@@ -10,14 +10,14 @@ class AgentsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('Agents')),
+        title: const Center(child: Text('Agents')),
         backgroundColor: Colors.black54,
       ),
       body: FutureBuilder<List<Agent?>>(
           future: controller.getHttp(),
           builder: (context, apidata) {
             if (apidata.data == null) {
-              return Text('erro');
+              return const Text('erro');
             }
             final agentslist = apidata.data!;
             return ListView.builder(
