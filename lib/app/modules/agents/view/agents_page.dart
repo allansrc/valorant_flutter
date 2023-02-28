@@ -11,7 +11,6 @@ class AgentsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Center(child: Text('Agents')),
-        backgroundColor: Colors.black54,
       ),
       body: FutureBuilder<List<Agent?>>(
           future: controller.getHttp(),
@@ -30,9 +29,7 @@ class AgentsPage extends StatelessWidget {
                 }
                 return Container(
                   padding: const EdgeInsets.all(6),
-                  color: Colors.black,
                   child: Container(
-                    color: Colors.red,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ListTile(
@@ -41,7 +38,6 @@ class AgentsPage extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
-                            color: Colors.white60,
                           ),
                         ),
                         subtitle: Text(
@@ -49,20 +45,16 @@ class AgentsPage extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
-                            color: Colors.white,
                           ),
                         ),
                         trailing: FloatingActionButton(
                           heroTag: agent.uuid,
-                          hoverColor: Colors.black,
-                          backgroundColor: Colors.black54,
                           child: const Icon(
+                            color: Colors.red,
                             Icons.open_in_full,
-                            color: Colors.white70,
                           ),
                           onPressed: () {
                             showBarModalBottomSheet(
-                                backgroundColor: Colors.black,
                                 context: context,
                                 builder: (context) {
                                   return GridView.count(
@@ -76,8 +68,7 @@ class AgentsPage extends StatelessWidget {
                                         (abilityindex) => Container(
                                           child: Text(
                                             '${abilities[abilityindex]?.description}',
-                                            style: const TextStyle(
-                                                color: Colors.white),
+                                            style: const TextStyle(),
                                           ),
                                         ),
                                       ),
