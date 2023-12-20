@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-import 'package:valorant_flutter/app/modules/home/feature/data/models/map_model.dart';
-import 'package:valorant_flutter/app/modules/maps/feature/domain/usecases/get_map_list_usecase.dart';
+import '../../home/feature/data/models/map_model.dart';
+import '../feature/domain/usecases/get_map_list_usecase.dart';
 
 class MapsController extends ChangeNotifier {
   // variáveis de serviços que vamos usar, por exemplo, fazer chamada na API

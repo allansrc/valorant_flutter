@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:valorant_flutter/app/modules/home/controller/home_controller.dart';
+import '../controller/home_controller.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

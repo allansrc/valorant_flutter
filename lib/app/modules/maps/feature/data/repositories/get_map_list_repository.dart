@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:valorant_flutter/app/modules/home/feature/data/models/map_model.dart';
-import 'package:valorant_flutter/app/modules/home/feature/data/models/response_map_list_model.dart';
+import '../../../../home/feature/data/models/map_model.dart';
+import '../../../../home/feature/data/models/response_map_list_model.dart';
 
 class GetMapListRepository {
   // essa variável chama-se de httpDioClient, pois o dio é um 'client' ou seja

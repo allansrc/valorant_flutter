@@ -24,16 +24,16 @@ class Callout {
       );
 
   factory Callout.fromMap(Map<String, dynamic> json) => Callout(
-        regionName: json["regionName"],
-        superRegionName: superRegionNameValues.map[json["superRegionName"]]!,
-        location: json["location"] == null
+        regionName: json['regionName'],
+        superRegionName: superRegionNameValues.map[json['superRegionName']]!,
+        location: json['location'] == null
             ? null
-            : MapLocation.fromMap(json["location"]),
+            : MapLocation.fromMap(json['location']),
       );
 
   Map<String, dynamic> toMap() => {
-        "regionName": regionName,
-        "superRegionName": superRegionNameValues.reverse[superRegionName],
-        "location": location?.toMap(),
+        'regionName': regionName,
+        'superRegionName': superRegionNameValues.reverse[superRegionName],
+        'location': location?.toMap(),
       };
 }

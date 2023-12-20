@@ -1,12 +1,12 @@
 enum SuperRegionName { A, ATTACKER_SIDE, B, MID, DEFENDER_SIDE, C }
 
 final superRegionNameValues = EnumValues({
-  "A": SuperRegionName.A,
-  "Attacker Side": SuperRegionName.ATTACKER_SIDE,
-  "B": SuperRegionName.B,
-  "C": SuperRegionName.C,
-  "Defender Side": SuperRegionName.DEFENDER_SIDE,
-  "Mid": SuperRegionName.MID
+  'A': SuperRegionName.A,
+  'Attacker Side': SuperRegionName.ATTACKER_SIDE,
+  'B': SuperRegionName.B,
+  'C': SuperRegionName.C,
+  'Defender Side': SuperRegionName.DEFENDER_SIDE,
+  'Mid': SuperRegionName.MID
 });
 
 class EnumValues<T> {

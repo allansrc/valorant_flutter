@@ -63,38 +63,38 @@ class MapModel {
       );
 
   factory MapModel.fromMap(Map<String, dynamic> json) => MapModel(
-        uuid: json["uuid"],
-        displayName: json["displayName"],
-        coordinates: json["coordinates"],
-        displayIcon: json["displayIcon"],
-        listViewIcon: json["listViewIcon"],
-        splash: json["splash"],
-        assetPath: json["assetPath"],
-        mapUrl: json["mapUrl"],
-        xMultiplier: json["xMultiplier"]?.toDouble(),
-        yMultiplier: json["yMultiplier"]?.toDouble(),
-        xScalarToAdd: json["xScalarToAdd"]?.toDouble(),
-        yScalarToAdd: json["yScalarToAdd"]?.toDouble(),
-        callouts: json["callouts"] == null
+        uuid: json['uuid'],
+        displayName: json['displayName'],
+        coordinates: json['coordinates'],
+        displayIcon: json['displayIcon'],
+        listViewIcon: json['listViewIcon'],
+        splash: json['splash'],
+        assetPath: json['assetPath'],
+        mapUrl: json['mapUrl'],
+        xMultiplier: json['xMultiplier']?.toDouble(),
+        yMultiplier: json['yMultiplier']?.toDouble(),
+        xScalarToAdd: json['xScalarToAdd']?.toDouble(),
+        yScalarToAdd: json['yScalarToAdd']?.toDouble(),
+        callouts: json['callouts'] == null
             ? []
             : List<Callout>.from(
-                json["callouts"]!.map((x) => Callout.fromMap(x))),
+                json['callouts']!.map((x) => Callout.fromMap(x))),
       );
 
   Map<String, dynamic> toMap() => {
-        "uuid": uuid,
-        "displayName": displayName,
-        "coordinates": coordinates,
-        "displayIcon": displayIcon,
-        "listViewIcon": listViewIcon,
-        "splash": splash,
-        "assetPath": assetPath,
-        "mapUrl": mapUrl,
-        "xMultiplier": xMultiplier,
-        "yMultiplier": yMultiplier,
-        "xScalarToAdd": xScalarToAdd,
-        "yScalarToAdd": yScalarToAdd,
-        "callouts": callouts == null
+        'uuid': uuid,
+        'displayName': displayName,
+        'coordinates': coordinates,
+        'displayIcon': displayIcon,
+        'listViewIcon': listViewIcon,
+        'splash': splash,
+        'assetPath': assetPath,
+        'mapUrl': mapUrl,
+        'xMultiplier': xMultiplier,
+        'yMultiplier': yMultiplier,
+        'xScalarToAdd': xScalarToAdd,
+        'yScalarToAdd': yScalarToAdd,
+        'callouts': callouts == null
             ? []
             : List<dynamic>.from(callouts!.map((x) => x.toMap())),
       };

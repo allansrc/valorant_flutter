@@ -20,16 +20,16 @@ class ResponseMapListModel {
 
   factory ResponseMapListModel.fromMap(Map<String, dynamic> json) =>
       ResponseMapListModel(
-        status: json["status"],
-        data: json["data"] == null
+        status: json['status'],
+        data: json['data'] == null
             ? []
             : List<MapModel>.from(
-                json["data"]!.map((x) => MapModel.fromMap(x))),
+                json['data']!.map((x) => MapModel.fromMap(x))),
       );
 
   Map<String, dynamic> toMap() => {
-        "status": status,
-        "data":
+        'status': status,
+        'data':
             data == null ? [] : List<dynamic>.from(data!.map((x) => x.toMap())),
       };
 }

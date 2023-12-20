@@ -1,9 +1,10 @@
 // imports de framework e pacotes externos
 import 'package:flutter/widgets.dart';
 
-// imports das pages
-import 'package:valorant_flutter/app/modules/home/view/home_page.dart';
-import 'package:valorant_flutter/app/modules/maps/view/maps_page.dart';
+// imports das pages: imports relativos, onde nao precisamos de usar
+// o caminho por pacote. Exemplo: 'package:valorant_flutter/modules....'
+import '../modules/home/view/home_page.dart';
+import '../modules/maps/view/maps_page.dart';
 
 import '../modules/agents/view/agents_page.dart';
 

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:valorant_flutter/app/modules/agents/feature/data/models/agents_response_model.dart';
+import '../feature/data/models/agents_response_model.dart';
 
 class DioController {
   final dio = Dio();

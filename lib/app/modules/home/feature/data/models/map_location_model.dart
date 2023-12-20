@@ -17,12 +17,12 @@ class MapLocation {
       );
 
   factory MapLocation.fromMap(Map<String, dynamic> json) => MapLocation(
-        x: json["x"]?.toDouble(),
-        y: json["y"]?.toDouble(),
+        x: json['x']?.toDouble(),
+        y: json['y']?.toDouble(),
       );
 
   Map<String, dynamic> toMap() => {
-        "x": x,
-        "y": y,
+        'x': x,
+        'y': y,
       };
 }

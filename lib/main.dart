@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:valorant_flutter/app/routes/app_routes.dart';
+import 'app/routes/app_routes.dart';
 
 void main() {
   runApp(const App());

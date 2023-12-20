@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:valorant_flutter/app/modules/agents/controller/dio_agents_controller.dart';
+import '../controller/dio_agents_controller.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import '../feature/data/models/agents_response_model.dart';
 
@@ -10,14 +10,14 @@ class AgentsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('Agents')),
+        title: const Center(child: Text('Agents')),
         backgroundColor: Colors.black54,
       ),
       body: FutureBuilder<List<Agent?>>(
           future: controller.getHttp(),
           builder: (context, apidata) {
             if (apidata.data == null) {
-              return Text('erro');
+              return const Text('erro');
             }
             final agentslist = apidata.data!;
             return ListView.builder(
@@ -73,12 +73,10 @@ class AgentsPage extends StatelessWidget {
                                     children: [
                                       ...List.generate(
                                         abilities!.length,
-                                        (abilityindex) => Container(
-                                          child: Text(
-                                            '${abilities[abilityindex]?.description}',
-                                            style: const TextStyle(
-                                                color: Colors.white),
-                                          ),
+                                        (abilityindex) => Text(
+                                          '${abilities[abilityindex]?.description}',
+                                          style: const TextStyle(
+                                              color: Colors.white),
                                         ),
                                       ),
                                     ],

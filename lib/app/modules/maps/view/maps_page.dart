@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:valorant_flutter/app/modules/home/controller/home_controller.dart';
-import 'package:valorant_flutter/app/modules/maps/controller/maps_controller.dart';
+import '../controller/maps_controller.dart';
 
 class MapsPage extends StatefulWidget {
   const MapsPage({super.key});
@@ -30,7 +29,7 @@ class MapsPageState extends State<MapsPage> {
                         return Text(
                           '${mapList.elementAt(index).displayName}',
                           // a linha acima é o mesmo que fazer > '${mapList[inde].displayName}'
-                          style: Theme.of(context).textTheme.headline4,
+                          style: Theme.of(context).textTheme.headlineMedium,
                         );
                       }),
                 ),
@@ -40,7 +39,7 @@ class MapsPageState extends State<MapsPage> {
                     onPressed: () {
                       controller.getMapList();
                     },
-                    child: const Text('Buscar lista da Mapas'),
+                    child: const Text('Buscar Mapas'),
                   ),
                 )
               ],
