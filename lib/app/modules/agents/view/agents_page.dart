@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../controller/dio_agents_controller.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import '../feature/data/models/agents_response_model.dart';
 
 class AgentsPage extends StatelessWidget {
@@ -61,27 +60,28 @@ class AgentsPage extends StatelessWidget {
                             color: Colors.white70,
                           ),
                           onPressed: () {
-                            showBarModalBottomSheet(
-                                backgroundColor: Colors.black,
-                                context: context,
-                                builder: (context) {
-                                  return GridView.count(
-                                    padding: const EdgeInsets.all(10),
-                                    crossAxisSpacing: 10,
-                                    mainAxisSpacing: 10,
-                                    crossAxisCount: 2,
-                                    children: [
-                                      ...List.generate(
-                                        abilities!.length,
-                                        (abilityindex) => Text(
-                                          '${abilities[abilityindex]?.description}',
-                                          style: const TextStyle(
-                                              color: Colors.white),
-                                        ),
-                                      ),
-                                    ],
-                                  );
-                                });
+                            // TODO: refazer essa implementação sem usar pacote
+                            // showBarModalBottomSheet(
+                            //     backgroundColor: Colors.black,
+                            //     context: context,
+                            //     builder: (context) {
+                            //       return GridView.count(
+                            //         padding: const EdgeInsets.all(10),
+                            //         crossAxisSpacing: 10,
+                            //         mainAxisSpacing: 10,
+                            //         crossAxisCount: 2,
+                            //         children: [
+                            //           ...List.generate(
+                            //             abilities!.length,
+                            //             (abilityindex) => Text(
+                            //               '${abilities[abilityindex]?.description}',
+                            //               style: const TextStyle(
+                            //                   color: Colors.white),
+                            //             ),
+                            //           ),
+                            //         ],
+                            //       );
+                            //     });
                           },
                         ),
                         leading: Image.network('${agent.displayIconSmall}'),
